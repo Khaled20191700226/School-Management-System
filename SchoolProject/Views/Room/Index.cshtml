@@ -1,0 +1,43 @@
+﻿@model List<Room>
+
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Room" asp-action="Create">Add New Room</a>
+
+<br />
+
+<div class="table-container">
+    <table>
+        
+        <thead>
+            <tr>
+                <th>Room Name</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (Room room in Model)
+             {
+                <tr>
+
+                    <td>
+                        @room.RoomName
+                    </td>
+                    
+                    <td>
+
+                        <a href="/Room/Delete/ @room.RoomId ">X</a>
+
+                    </td>
+
+
+
+                </tr>
+
+             }
+
+        </tbody>
+    
+    </table>
+</div>
